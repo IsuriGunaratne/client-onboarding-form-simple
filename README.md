@@ -10,16 +10,17 @@ The form submits JSON data to an external API endpoint.
 - Dynamic date validation (start date must be today or later)
 - Tailwind CSS for styling
 - Jest test cases for validating the Zod schema
+- Pre-fill Services from Query Params
 
 ## Prerequisites
 - Node.js >= 18
-- npm or pnpm installed
+- npm installed
 
 ## Installation
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/<your-username>/client-onboarding-form-simple.git
+git clone https://github.com/IsuriGunaratne/client-onboarding-form-simple.git
 cd client-onboarding-form-simple
 ```
 
@@ -57,6 +58,16 @@ http://localhost:3000
 * Successful submissions show a success message. 
 
 * Failed submissions show an error notice at the top.
+
+4. **
+
+You can pre-select a service automatically by adding a query parameter to the URL. 
+For example:
+```bash
+https://your-app-domain.com/?service=UI%2FUX
+```
+This will automatically check the UI/UX checkbox in the Services section.
+
 
 ## Running Test Cases
 The project uses Jest to test the Zod validation schema **(__tests__/schema.test.ts)**.
