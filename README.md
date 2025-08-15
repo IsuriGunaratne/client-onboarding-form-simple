@@ -59,7 +59,8 @@ http://localhost:3000
 
 * Failed submissions show an error notice at the top.
 
-4. **
+
+4. **Service query param from the URL**
 
 You can pre-select a service automatically by adding a query parameter to the URL. 
 For example:
