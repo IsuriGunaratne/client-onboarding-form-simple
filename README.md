@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Client Onboarding Form
+A simple client onboarding form built with **Next.js**, **React Hook Form**, and **Zod** for validation.  
+The form submits JSON data to an external API endpoint.
 
-## Getting Started
+## Features
+- Form validation with **Zod + React Hook Form**
+- Inline error messages
+- Success and error handling for form submission
+- Services as multi-select checkboxes
+- Dynamic date validation (start date must be today or later)
+- Tailwind CSS for styling
+- Jest test cases for validating the Zod schema
 
-First, run the development server:
+## Prerequisites
+- Node.js >= 18
+- npm or pnpm installed
 
+## Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/<your-username>/client-onboarding-form-simple.git
+cd client-onboarding-form-simple
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Environment Variables**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a  **.env.local**  file in the root folder:
 
-## Learn More
+```bash
+NEXT_PUBLIC_ONBOARD_URL=https://example.com/api/onboard
+```
+For testing purposes, you can also use a mock API like
+```bash
+https://jsonplaceholder.typicode.com/posts
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Running the Application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Start the development server**
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Open the app in your browser**
+```bash
+http://localhost:3000
+```
 
-## Deploy on Vercel
+3. **Fill out the form and submit**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Successful submissions show a success message. 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Failed submissions show an error notice at the top.
+
+## Running Test Cases
+The project uses Jest to test the Zod validation schema **(__tests__/schema.test.ts)**.
+```bash
+npm test
+```
+
+## Notes
+
+* The form submission endpoint is configurable via NEXT_PUBLIC_ONBOARD_URL.
+
+* All form fields are validated client-side using Zod.
+
+* Tests ensure that the validation logic behaves correctly for valid and invalid input.
